@@ -115,6 +115,9 @@ let
         # problematic because moveLib64 doesn't attempt to merge overlapping
         # directories but fails instead. Here we do the merge manually.
         preInstall = preInstall + ''
+          ls -l ./osqp_install/lib64/
+          ls -l ./osqp_install/lib64/cmake/
+          ls -l ./osqp_install/lib64/cmake/osqp/
           mkdir -p ./osqp_install/lib/cmake/osqp
           mv ./osqp_install/lib64/cmake/osqp/* ./osqp_install/lib/cmake/osqp
           rm -r ./osqp_install/lib64/cmake
